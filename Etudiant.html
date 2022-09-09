@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Etudant</title>
+
+    <script LANGUAGE="JavaScript">
+            // fonction d supression des Notes
+      function suprim(zone7, sup) {
+          var supp = document.querySelector('#sup');
+          var nb = document.getElementById('zone7').rows.length;
+          document.getElementById('zone7').deleteRow(-1);
+        }
+            // fonction de supression de l'enrégistrement étudiant
+        function suprim2(tab22, supp) {
+          var supp = document.querySelector('#supp');
+          var nb = document.getElementById('tab22').rows.length;
+          document.getElementById('tab22').deleteRow(-1);
+        }  
+    </script>
+  
+</head>
+<body>
+  <!--bloc du formulaire-infos de l'étudiant-->
+    <div id="cont1" style="display: flex;">
+      <div class="bl1">  
+        <h2 class="h2">Enrégistrer un élève</h2><body>
+        <form action="" id="form">
+          <div class="content">
+            <div class="bloc1">
+              <div class="names">
+                <label for="nom">Nom</label><br>
+                <input type="text" name="nom" id="nom" size="20">
+              </div>
+    
+              <div class="names">
+                <label for="prenom">prenom</label><br>
+                <input type="text" name="prenom" id="prenom" size="20">
+              </div>
+    
+              <div class="names">
+                <label for="Lieu">Lieu de naissance</label><br>
+                <input type="text" id="lieu" name="Lieu">
+              </div>
+            </div>
+                <!--bloc du formulaire-infos de l'étudiant-->
+                <div class="bloc11">
+                  <label for="parcours"></label>
+                  <select name="parcours" size="1" id="liste">
+                    <option>Dev-web</option>
+                    <option>Data science</option>
+                    <optoion>Art numérique</option>
+                  </select>
+                  <div class="title0">
+                    <h3 class="title1">Taille</h3>
+                    <h3 class="title2">Poids</h3>
+                  </div>
+                  <div id="tail_poids">
+                    <div class="tail t2">
+                      <input type="text" value="taille" id="taille" size="6"  placeholder="">
+                      <label for="taille" class="met">mètre</label>
+                    </div>
+                    <div class="tail t2">
+                      <input type="text" value="poids" id="poids" size="6" placeholder="">
+                      <label for="poids" class="met">kg</label>
+                    </div>
+                  </div>
+                
+                  <h2>Sexe</h2>
+                  <input type="radio" name="sexe" value="Homme"> Homme
+                  <input type="radio" name="sexe" value="Femme"> Femme <br>
+                  <div style="margin-top:20px">
+                    <label for="Date">Date de naissance</label>
+                    <input type="date" name="Date" id="date">
+                  </div>
+                </div>
+        </div>
+                                    
+                                    <!--bloc du formulaire-infos de l'étudiant-->
+                                    <h2 style="margin-left: 26px;">Notes</h2>
+                                    <div class="bloc2">                
+                                      <div>
+                                        <div class="mat">Matieres</div>
+                                        <select name="Matieres" id="select">
+                                          <option value="">Entrez une matière</option>
+                                          <option value="Dom">DOM</option>
+                                          <option value="Javascrip">Javascript</option>
+                                          <option value="PHP">PHP</option>
+                                          <option value="Algorithmique">Algorithmique</option>
+                                        </select>
+                                      </div>
+                                      <div style="margin-left: 15px">
+                                        <div class="mat">Notes</div>
+                                        <input type="number" name="no" id="no" placeholder="0.0" step="0.0" min="0" max="20" required>
+                                        <span class="validity"></span>
+                                      </div>
+                                      <input type="button" id="btn1" value="ajouter">
+                                      <input type="button" id="sup" value="supprimer" onclick="suprim(zone7, sup)">
+                                    </div>
+                                    
+                                    <table style="margin-left: 0px;">
+                                      <tr style="text-align:center;">
+                                        <th class="tamat">Matière</th>
+                                        <th class="tamat">Notes</th>
+                                      </tr>
+                                    </table>
+                                    <table id="zone7" name="zone7">
+                                      <tr> </tr>
+                                    </table>
+                    
+                                    <button id="bouton">Enrégistrer</button>
+                                    
+                                    </form>
+                  <script>
+
+                     var att = document.querySelector('#btn1');
+                          att.addEventListener('click', function () {
+                              var select = document.getElementById("select").options[document.getElementById('select').selectedIndex].text;
+                              var btn = document.querySelector('#no').value;
+                                  document.getElementById("zone7").innerHTML += "<tr><td class='option'>" + select + "</td><td class='option'>" + btn + "</td></tr>";
+                                      })  
+                 </script>
+
+  </div>
+  
+    <!----------------------Partie enrégistrement etudiant------------------------------->
+    <div id="enre">           
+                <table id='tab1' style="width: 757px">
+                    <tr style="border:1px solid blue;">
+                        <th  class="parc">Nom</th>
+                        <th  class="parc">prénom</th>
+                        <th  class="parc">Lieu de naissance</th>
+                        <th class="parc">Parcours</th>
+                        <th  class="parc">Taille</th>
+                        <th  class="parc">Poids</th>
+                        <th  class="parc">Sexe</th>
+                        <th  class="parc">Date de naissance</th>
+                    </tr>
+                </table>
+                  
+                    <table id="tab22"> 
+                        <!--zone de chargment du d'ableau d'enrégistrement de l'étidiant-->
+                    </table>
+                   
+                    <button id="actu" onclick="showContent('tab22')">actualiser</button>
+                    <button id="supp" onclick="suprim2(tab22, supp)">supprimer</button>
+                    <div id="zone3"></div>
+                    <div id="zone4"></div>
+
+                    <!-- 1-formuliare qui prends les informations sur les éotudiants -->
+                    <form action="" id="form2">
+                      <h2>Enregistrement Notes</h2>
+                      <div id="zone2"></div>
+                                       
+                      <table id='tab'>
+                        <tr style="border:1px solid blue;">
+                          <th class="tamat1">Matières</th>
+                          <th class="tamat1">Notes</th>                   
+                        </tr>                   
+                      </table>
+                    
+                      <table id="zone8" name="zone8">
+                      </table>
+                    </form>
+              
+                <script>
+                       function etudiant(nom, prenom, lieu, parcours, taille, poids, sexe, date) {
+                           this.nom = nom;
+                           this.prenom = prenom;
+                           this.lieu = lieu;
+                           this.parcours = parcours;
+                           this.taille = taille;
+                           this.poids = poids;
+                           this.sexe = sexe;
+                           this.date = date;
+                       }
+
+                    let btn = document.getElementById('bouton');
+                   
+                    document.getElementById('zone3').innerHTML = "<h1> Enrégistrement de l'Etudiant</h1>";
+                    let tabl; let tr; let td1, td2, td3, td4, td5;
+                    btn.addEventListener(
+                        'click', (e) => {
+                
+                            e.preventDefault();
+                                           let mat = new etudiant(document.getElementById('nom').value, document.getElementById('prenom').value, document.getElementById('lieu').value,
+                          document.getElementById("liste").options[document.getElementById('liste').selectedIndex].text, document.getElementById('taille').value, document.getElementById('poids').value,
+                          document.querySelector('input[name = "sexe"]:checked').value, document.getElementById('date').value);
+
+                        document.getElementById('zone3').innerHTML += "<h3> Etudiant: " + mat.nom + ' ' + mat.prenom + '</h3><br>';;
+                        document.getElementById('zone3').innerHTML += "<strong>Nom: </strong>" + mat.nom + '<br>';
+                        document.getElementById('zone3').innerHTML += "<strong>Prenom: </strong>" + mat.prenom + '<br>';
+                        document.getElementById('zone3').innerHTML += "<strong>Lieu de naissance: </strong>" + mat.lieu + '<br>';
+                        document.getElementById('zone3').innerHTML += "<strong>Parcours: </strong>" + mat.parcours + '<br>';
+                        document.getElementById('zone3').innerHTML += "<strong>Taille: </strong>" + mat.taille + '<br>';
+                        document.getElementById('zone3').innerHTML += "<strong>Poids: </strong>" + mat.poids + '<br>';
+                        document.getElementById('zone3').innerHTML += "<strong>sex: </strong>" + mat.sexe + '<br>';
+                        document.getElementById('zone3').innerHTML += "<strong>Date: </strong>" + mat.date + '<br>';
+
+                             /*création dynamique du table html d'enrégistrement de l'tudiant*/
+
+                            tabl = document.getElementById('tab22')
+                            
+                            tr = document.createElement('tr')
+                            td1 = document.createElement('td')
+                            td1.innerHTML = mat.nom
+                            td2 = document.createElement('td')
+                            td2.innerHTML = mat.prenom
+                            td3 = document.createElement('td')
+                            td3.innerHTML = mat.lieu
+                            td4 = document.createElement('td')
+                            td4.innerHTML = mat.parcours
+                            td5 = document.createElement('td')
+                            td5.innerHTML = mat.taille
+                            td6 = document.createElement('td')
+                            td6.innerHTML = mat.poids
+                            td7 = document.createElement('td')
+                            td7.innerHTML = mat.sexe
+                              td8 = document.createElement('td')
+                            td8.innerHTML = mat.date
+                            // asignation des attributs sur le tableau dynamique + attribut zone cliquable des cellules
+                            td1.setAttribute("contenteditable","true" )
+                            td1.setAttribute("class", "set")
+                            td1.style.border= "1px solid gray";
+                            td1.style.width = "59px";
+                            td1.style.textAlign = "center";
+
+                            td2.setAttribute("contenteditable", "true")
+                            td2.style.border = "1px solid gray";
+                            td2.style.width = "82px";
+                            td2.style.textAlign = "center";
+
+                            td3.setAttribute("contenteditable", "true")
+                            td3.style.border = "1px solid gray";
+                            td3.style.width = "157px";
+                            td3.style.textAlign = "center";
+                           
+
+                            td4.setAttribute("contenteditable", "true")
+                            td4.style.border = "1px solid gray";
+                            td4.style.width = "92px";
+                            td4.style.textAlign = "center";
+
+                            td5.setAttribute("contenteditable", "true")
+                            td5.style.border = "1px solid gray";
+                            td5.style.width = "64px";
+                            td5.style.textAlign = "center";
+
+                            td6.setAttribute("contenteditable", "true")
+                            td6.style.border = "1px solid gray";
+                            td6.style.width = "63px";
+                            td6.style.textAlign = "center";
+                            
+                            td7.setAttribute("contenteditable", "true")
+                            td7.style.border = "1px solid gray";
+                            td7.style.width = "57px";
+                            td7.style.textAlign = "center";
+
+                            td8.setAttribute("contenteditable", "true")
+                            td8.style.border = "1px solid gray";
+                            td8.style.width = "158px";
+                            td8.style.textAlign = "center";
+
+                            // introduireles les td comme enfant du tr
+                       
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+                            tr.appendChild(td3);
+                            tr.appendChild(td4);
+                            tr.appendChild(td5);
+                            tr.appendChild(td6);
+                            tr.appendChild(td7);
+                               tr.appendChild(td8);
+                            tabl.appendChild(tr);
+
+                             var alert = document.getElementsByName("zone7")[0].innerHTML;
+                        console.log(alert);
+                        document.getElementsByName("zone8")[0].innerHTML = alert;
+
+                        document.getElementById('nom').value = ''
+                            document.getElementById('prenom').value = ''
+                            document.getElementById('lieu').value = ''
+                            // document.getElementById('parcours').value = ''
+                            document.getElementById('taille').value = ''
+                            document.getElementById('poids').value = ''
+                                // document.getElementById('sexe').value = ''
+                                 document.getElementById('date').value = ''        
+ 
+                        })
+
+                          function showContent(tableID) {
+                            
+                              var tbl = document.getElementById(tableID);
+                              // var tabb= document.getElementById('tab22');
+                                document.getElementById('zone3').style.display = "none";
+                                document.getElementById('zone4').innerHTML = '<h1> Enrégistrement de l Etudiant</h1>';
+
+                               try {
+                                var rCount = tbl.rows.length;
+                                 for (var i = 0; i < tbl.rows.length; i++) {
+                        
+                                  actu0 = tbl.rows[i].cells[0].textContent;
+                                     actu1 = tbl.rows[i].cells[1].textContent;
+                                        actu2 = tbl.rows[i].cells[2].textContent;
+                                           actu3 = tbl.rows[i].cells[3].textContent;
+                                              actu4 = tbl.rows[i].cells[4].textContent;
+                                                 actu5 = tbl.rows[i].cells[5].textContent;
+                                                   actu6 = tbl.rows[i].cells[6].textContent;
+                                                       actu7 = tbl.rows[i].cells[7].textContent;
+
+                          document.getElementById('zone4').innerHTML += "<h3>Etudiant: " + actu0 + '</h3><br>';
+                    
+                             document.getElementById('zone4').innerHTML+= "<strong>Nom: </strong>" + actu0 + '<br>';
+                                  document.getElementById('zone4').innerHTML += "<strong>prénom: </strong>" + actu1 + '<br>';
+                                    document.getElementById('zone4').innerHTML += "<strong>Lieu de naissance: </strong>" + actu2 + '<br>';
+                                      document.getElementById('zone4').innerHTML += "<strong>Parcours: </strong>" + actu3 + '<br>';
+                                        document.getElementById('zone4').innerHTML += "<strong>Taille: </strong>" + actu4 + '<br>';
+                                          document.getElementById('zone4').innerHTML += "<strong>Poids: </strong>" + actu5 + '<br>';
+                                            document.getElementById('zone4').innerHTML += "<strong>Poids: </strong>" + actu6 + '<br>';
+                                              document.getElementById('zone4').innerHTML += "<strong>Date de naissance: </strong>" + actu7 + '<br>';
+                                 }
+                            
+                              } catch (e) {
+                                alert(e);
+                              }
+                                  }                        
+                </script>          
+      </div>
+   </div>
+
+</body>
+</html>
+
+

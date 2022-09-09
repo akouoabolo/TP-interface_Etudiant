@@ -1,0 +1,255 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+body{
+    background-image: linear-gradient(to left,rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+            url("headr.jpg");
+}
+*{
+    /* font-family: 'Roboto', sans-serif; */
+    
+}
+#cont1{
+    display: flex;
+        justify-content: space-between;
+    
+    border: 2px dotted red;
+    margin: auto;
+    padding: 10px 5px;
+}
+
+.h2{
+    border: 1px solid white;
+        width: 258px;
+        text-align: center;
+        margin-left: 30px;
+    }
+#enre{
+    border: 1px solid white;
+    padding: 15px;
+    width: 59%;
+}
+
+
+
+.names{
+    margin-top: 10px;
+}
+.content{
+    display: flex;
+    padding-top: 10px;
+    /* justify-content: space-around; */
+ 
+}
+
+.bloc1{
+  /* border:1px solid red; */
+  margin-top: 20px;
+width: 100%;
+    margin-left: 25px;
+  
+}
+#form{
+    width: 50%;
+    
+}
+
+.tail{
+    display: flex;
+    margin-top: 30px;
+}
+.t2{
+    margin-right: 10px;
+}
+#tail_poids{
+    display: flex;
+}
+.title0 {
+   margin-top: 10px;
+   margin-bottom: -20px;
+}
+.title1,.title2{
+    display:inline-block; 
+}
+.title2{
+    margin-left: 63px;
+}
+.met{
+    margin-left: 3px;
+}
+.bloc11{
+    margin-top: 48px;
+        margin-left: 40px;
+}
+
+
+.mat{
+    margin: 5px 0;
+}
+
+.bloc2{
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 25px;
+}
+
+#btn2,#btn1,#sup{
+    height: 25px;
+    margin-top: 25px;
+    margin-left: 15px;
+   
+}
+
+table, tr,th{
+    border: 1px solid rgb(119, 37, 37);
+    border-collapse: collapse;
+    
+}
+th {
+    padding: 0 10px;
+}
+
+.ange{
+width: 72px;
+}
+
+.ange2 {
+    width: 72px;
+}
+
+
+
+input:invalid+span:after {
+    content: '✖';
+    padding-left: 5px;
+   
+ 
+}
+
+input:valid+span:after {
+    content: '✓';
+    padding-left: 5px;
+}
+
+.sat{
+border: 1px solid gray;
+    width: 58px;
+    height: 20px;
+    margin-top: -2px;
+    text-align: center;
+    position: relative;
+    left: 75px;
+    top: -20px;
+}
+
+#supp{
+    /* transform: translateX(614px); */
+background: rgba(255, 0, 0, 0.61);
+    border: 0;
+    border: 1px solid white;
+    padding: 3px 5px;
+margin-left: 18px;
+    color: white;
+}
+
+#supp:hover {
+    transition: 0.4s ease-in-out;
+    scale: 1.1;
+    color: white;
+
+}
+#actu {
+  
+    margin-top: 10px;
+    margin-left: 539px;
+}
+.parc{
+    width: 
+}
+
+
+.tamat{
+width: 194px;
+}
+
+.tamat1 {
+    width: 120px;
+}
+.option{
+    width: 138px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.option1 {
+    width: 138px;
+    border: 1px solid gray;
+}
+
+
+#bouton {
+    margin-top: 25px;
+    margin-left: 408px;
+    background: greenyellow;
+    border: 1px solid white;
+    border-radius: 2px;
+    padding: 2px 15px;
+}
+#bouton:hover {
+   
+    background: rgb(148, 245, 4);
+    border: 1px solid white;
+    border-radius: 5px;
+    scale: 1.1;
+    
+    transition: 0.3s ease-in-out;
+}
+.bl1{
+    margin-left: 14px;
+    width: 40%;
+}
+#actu{
+background: rgba(48, 47, 1, 0.459);
+    border: 0;
+    border: 1px solid white;
+    padding: 3px 5px;
+    
+    color: white;
+}
+
+#actu:hover {
+    transition: 0.4s ease-in-out;
+scale: 1.1;
+      
+}
+
+
+
+#btn1{
+        background: rgba(48, 47, 1, 0.555);
+        border: 0;
+        border: 1px solid white;
+        color: white;
+       
+}
+
+#sup {
+    background: rgba(209, 52, 4, 0.959);
+    border: 0;
+    border: 1px solid white;
+    color: white;
+    
+}
+
+#sup:hover {
+    transition: 0.4s ease-in-out;
+        scale: 1.1;
+        
+       
+}
+#btn1:hover{
+    transition: 0.4s ease-in-out;
+    scale: 1.1;
+   
+}
+
